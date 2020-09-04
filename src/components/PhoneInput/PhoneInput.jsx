@@ -39,21 +39,6 @@ function Phinput() {
           <Button type="submit">Submit</Button>
 
         </Form>
-
-        {/* <InputGroup size="sm" className="mb-3">
-          <InputGroup.Prepend>
-            <InputGroup.Text id="basic-addon3">
-              India +91
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <FormControl aria-label="Small" required type="text" aria-describedby="inputGroup-sizing-sm" />
-          </Form>
-        </InputGroup>
-        <div className="Custom-Buttons">
-          <Button variant="outline-primary" as="input" type="reset" size="sm" value="Reset" />{" "}
-          <Button variant="outline-primary" as="input" type="submit" size="sm" value="Submit" />
-        </div> */}
       </section>
     );
 }
