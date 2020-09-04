@@ -27,7 +27,7 @@ function Phinput() {
           </InputGroup.Prepend>
           
             <Form.Group as={Col} md="20" controlId="validationCustom01">
-              <Form.Control required type="text" placeholder="Phone Number" />
+              <Form.Control required type="text" placeholder="Phone Number" pattern="[0-9]{10}"/>
 
               <Form.Control.Feedback type="invalid"> Please Enter The Phone Number.</Form.Control.Feedback>
               
