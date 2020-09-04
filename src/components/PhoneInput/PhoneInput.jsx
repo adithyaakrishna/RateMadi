@@ -1,62 +1,59 @@
 import React, { useState } from 'react';
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input';
 //import '../PhoneInput/phoneinput.min.scss';
-import { Button, InputGroup, FormControl, Dropdown, DropdownButton } from "react-bootstrap";
+import { Button, InputGroup, FormControl, Form, Col} from "react-bootstrap";
 
 function Phinput() {
-    const [value, setValue] = useState()
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
     return (
       <section>
-        {/* <PhoneInput
-          defaultCountry="IN"
-          placeholder="Enter phone number"
-          value={value}
-          onChange={setValue}
-        /> */}
-        <InputGroup size="sm" className="mb-3">
-          {/* <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroup-sizing-sm">
-              Phone Number
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form.Row >
+
+          <InputGroup.Prepend >
+            <InputGroup.Text id="basic-addon3" style={{height:'39px'}}>
+              India +91
             </InputGroup.Text>
-          </InputGroup.Prepend> */}
+          </InputGroup.Prepend>
+          
+            <Form.Group as={Col} md="20" controlId="validationCustom01">
+              <Form.Control required type="text" placeholder="Phone Number" />
+
+              <Form.Control.Feedback type="invalid"> Please Enter The Phone Number.</Form.Control.Feedback>
+              
+              <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
+            </Form.Group>
+          
+          </Form.Row>
+          <Button type="reset">Reset</Button>{" "}
+          <Button type="submit">Submit</Button>
+
+        </Form>
+
+        {/* <InputGroup size="sm" className="mb-3">
           <InputGroup.Prepend>
             <InputGroup.Text id="basic-addon3">
               India +91
-          </InputGroup.Text>
+            </InputGroup.Text>
           </InputGroup.Prepend>
-          {/* <DropdownButton
-            as={InputGroup.Prepend}
-            variant="outline-secondary"
-            title="Countries"
-            id="input-group-dropdown-1"
-          >
-            <Dropdown.Item href="#">India +91</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item href="#">Others</Dropdown.Item>
-          </DropdownButton> */}
-          
-          <FormControl
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-          />
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <FormControl aria-label="Small" required type="text" aria-describedby="inputGroup-sizing-sm" />
+          </Form>
         </InputGroup>
         <div className="Custom-Buttons">
-          <Button
-            variant="outline-primary"
-            as="input"
-            type="reset"
-            size="sm"
-            value="Reset"
-          />{" "}
-          <Button
-            variant="outline-primary"
-            as="input"
-            type="submit"
-            size="sm"
-            value="Submit"
-          />
-        </div>
+          <Button variant="outline-primary" as="input" type="reset" size="sm" value="Reset" />{" "}
+          <Button variant="outline-primary" as="input" type="submit" size="sm" value="Submit" />
+        </div> */}
       </section>
     );
 }
