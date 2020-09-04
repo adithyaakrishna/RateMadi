@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'react-phone-number-input/style.css'
 //import '../PhoneInput/phoneinput.min.scss';
-import { Button, InputGroup, FormControl, Form, Col} from "react-bootstrap";
+import { Button, InputGroup, Form, Col} from "react-bootstrap";
 
 function Phinput() {
   const [validated, setValidated] = useState(false);
