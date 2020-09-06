@@ -16,20 +16,20 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Phinput(props) {
+export default function Otpinput(props) {
   const classes = useStyles();
   // useEffect (({
   //   Axios.get()
   // }))
-  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
 
 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    await Axios.get(`${proxyurl}` + "https://api.msg91.com/api/v5/otp?authkey=130764Adagc1lyUY5f54c6bbP1&template_id=5e713062d6fc052d9b0abeb4&mobile=" + `${phone}` + "&invisible=1",)
-      .then((res) => props.setCurrentPhone(phone))
+    await Axios.post(`${proxyurl}` +"https://api.msg91.com/api/v5/otp/verify?mobile=%24 " + `${props.currentPhone}` + "&otp=%24" + `${otp}` + "&authkey=%24" + "130764Adagc1lyUY5f54c6bbP1var")
+    .then(res => console.log(res))
   }
 
   return (
@@ -38,16 +38,16 @@ export default function Phinput(props) {
         <div>
           <TextField
             error
-            id="Phonenumber"
-            name="Phonenumber"
-            label="Phone Number"
-            placeholder="Phone Number"
+            id="otp"
+            name="OTP"
+            label="OTP"
+            placeholder="OTP"
             variant="outlined"
             color="secondary"
             autoComplete="Phone"
             pattern="[0-9]{10}" required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
           />
         </div>
 
