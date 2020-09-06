@@ -1,45 +1,39 @@
-import React, { useState } from 'react';
-import 'react-phone-number-input/style.css'
-//import '../PhoneInput/phoneinput.min.scss';
-import { Button, InputGroup, Form, Col} from "react-bootstrap";
+import React from "react";
+import {Button} from "@material-ui/core"
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
 
-function Phinput() {
-  const [validated, setValidated] = useState(false);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: 200
+    },
+  },
+}));
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
-    return (
-      <section>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Form.Row >
-
-          <InputGroup.Prepend >
-            <InputGroup.Text id="basic-addon3" style={{height:'39px'}}>
-              India +91
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          
-            <Form.Group as={Col} md="20" controlId="validationCustom01">
-              <Form.Control required type="text" placeholder="Phone Number" pattern="[0-9]{10}"/>
-
-              <Form.Control.Feedback type="invalid"> Please Enter The Phone Number.</Form.Control.Feedback>
-              
-              <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
-            </Form.Group>
-          
-          </Form.Row>
-          <Button type="reset">Reset</Button>{" "}
-          <Button type="submit">Submit</Button>
-
-        </Form>
-      </section>
-    );
+export default function Phinput() {
+  const classes = useStyles();
+  
+  return (
+    <section>
+      <form className={classes.root} noValidate autoComplete="on">
+        <div>
+          <TextField
+            error
+            id="Phonenumber"
+            name="Phonenumber"
+            label="Phone Number"
+            placeholder="Phone Number"
+            variant="outlined"
+            color="secondary"
+            autoComplete="Phone"
+            pattern="[0-9]{10}" required
+          />
+        </div>
+        
+        <Button type="submit" variant="contained" color="secondary">Submit</Button>
+      </form>
+    </section>
+  );
 }
-export default Phinput;
