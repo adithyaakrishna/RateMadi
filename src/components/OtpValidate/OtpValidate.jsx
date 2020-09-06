@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core"
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
+import {useHistory} from 'react-router-dom'
 //import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +23,7 @@ export default function Otpinput(props) {
   //   Axios.get()
   // }))
   const [otp, setOtp] = useState("");
+  const history = useHistory();
 
 
 
@@ -51,7 +53,8 @@ export default function Otpinput(props) {
           />
         </div>
 
-        <Button type="submit" variant="contained" color="secondary">Submit</Button>
+        <Button type="submit" variant="contained" color="secondary">Verify</Button><br />
+        <Button variant="contained" color="primary" onClick = {() => history.push("/home")}>Continue</Button>
       </form>
     </section>
   );

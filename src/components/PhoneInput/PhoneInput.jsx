@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
 //import Axios from "axios";
+import {useHistory} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,12 +17,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Phinput(props) {
+function Phinput(props) {
   const classes = useStyles();
   // useEffect (({
   //   Axios.get()
   // }))
   const [phone, setPhone] = useState("");
+  var history = useHistory();
 
 
 
@@ -29,7 +31,7 @@ export default function Phinput(props) {
     event.preventDefault();
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     await Axios.get(`${proxyurl}` + "https://api.msg91.com/api/v5/otp?authkey=130764Adagc1lyUY5f54c6bbP1&template_id=5e713062d6fc052d9b0abeb4&mobile=" + `${phone}` + "&invisible=1",)
-      .then((res) => props.setCurrentPhone(phone))
+      .then((res) => props.setCurrentPhone(phone)).then(() => history.push("/validate"))
   }
 
   return (
@@ -56,3 +58,5 @@ export default function Phinput(props) {
     </section>
   );
 }
+
+export default Phinput;

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import FormField from "../../components/Form/Form";
 import CustomizedRatings from "../../components/Rating/Rating";
 //import BottomNavBar from "../../components/BottomNavbar/BottomNavBar";
 
-const FormPage = () => {
+const FormPage = (props) => {
+  const [rating, setRating] = useState(2);
+  const [message, setMessage] = useState('');
   return (
     <section>
 
-      <CustomizedRatings></CustomizedRatings>
+      <CustomizedRatings rating = {rating} setRating = {setRating}></CustomizedRatings>
       
-      <FormField></FormField>
+      <FormField message = {message} setMessage = {setMessage} rating = {rating} currentPhone = {props.currentPhone} setCurrentPhone = {props.setCurrentPhone}></FormField>
 
       {/* <BottomNavBar></BottomNavBar> */}
 

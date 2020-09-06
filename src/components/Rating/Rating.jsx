@@ -53,17 +53,19 @@ IconContainer.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function CustomizedRatings() {
+export default function CustomizedRatings(props) {
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend">Delivery Rating</Typography>
         <StyledRating
           name="customized-color"
-          defaultValue={2}
+          defaultValue={props.rating}
           getLabelText={(value) => `${value} Heart${value !== 1 ? "s" : ""}`}
           precision={0.5}
           icon={<FavoriteIcon fontSize="inherit" />}
+          value = {props.rating}
+          onChange = {(e, value) => {props.setRating(value)}}
         />
       </Box>
     </div>
