@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import CustomizedRatings from "../Rating/Rating";
+// import { makeStyles } from "@material-ui/core/styles";
+// import CustomizedRatings from "../Rating/Rating";
 
 const FormField = () => {
   return (
