@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FormPage></FormPage>
+        {/* <FormPage></FormPage> */}
         {/* <HomePage></HomePage> */}
-        {/* <Phinput></Phinput> */}
+        <Phinput></Phinput>
       </header>
     </div>
   );
