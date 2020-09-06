@@ -5,7 +5,7 @@ import Phinput from './components/PhoneInput/PhoneInput';
 import FormPage from './pages/FormPage/FormPage';
 import HomePage from './pages/HomePage/HomePage';
 import Otpinput from './components/OtpValidate/OtpValidate';
-//import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 
 
@@ -16,11 +16,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <FormPage></FormPage> */}
-        {/* <HomePage></HomePage> */}
-        {currentPhone === null ? <Phinput setCurrentPhone={setCurrentPhone}></Phinput> : 
-        <Otpinput currentPhone={currentPhone}></Otpinput>}
-
+      <Switch>
+          <Route exact path='/' render={() => <Phinput setCurrentPhone={setCurrentPhone}></Phinput>}></Route>
+          <Route path='/validate' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<Otpinput currentPhone={currentPhone}></Otpinput>}></Route>
+          <Route path='/home' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<HomePage></HomePage>}></Route>
+          <Route path='/rating' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<FormPage setCurrentPhone = {setCurrentPhone} currentPhone = {currentPhone}></FormPage>}></Route>
+      </Switch>   
       </header>
     </div>
   );
