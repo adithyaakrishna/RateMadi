@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Phinput() {
   const classes = useStyles();
-  useEffect (({
-    Axios.get()
-  }))
+  // useEffect (({
+  //   Axios.get()
+  // }))
   
   return (
     <section>
