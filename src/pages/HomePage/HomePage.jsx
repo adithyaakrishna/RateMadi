@@ -16,22 +16,6 @@ const HomePage = () => {
       <QRCode value="http://facebook.github.io/react/" />
       <br />
       {/* <AmountSlider></AmountSlider> */}
-      <TextField
-        error
-        id="standard-error"
-        label="Enter a Tip Amount"
-        defaultValue="Rs. 10"
-        style={{ marginBottom: "10px" }}
-      />
-      <br />
-      <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        style={{ marginBottom: "20px" }}
-      >
-        Tip
-      </Button>
       <Phinput></Phinput>
       <Button
         type="submit"

@@ -28,8 +28,11 @@ const FormField = (props) => {
           />
           <br />
         </div>
-
-        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"20px"}}>
+        <TextField error id="standard-error" label="Enter a Tip Amount" defaultValue="Rs. 10" style={{ marginBottom: "20px", marginTop:"10px" }} />
+        <br />
+        <Button type="submit" variant="contained" color="primary" style={{ marginBottom: "10px" }}>Tip</Button>
+        <br />
+        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"10px"}}>
           Submit
         </Button>
       </form>
