@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Button } from "@material-ui/core"
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -53,7 +53,7 @@ export default function Otpinput(props) {
           />
         </div>
 
-        <Button type="submit" variant="contained" color="secondary">Verify</Button><br />
+        <Button type="submit" variant="contained" color="secondary" style={{marginBottom:"10px", marginTop:"10px"}}>Verify</Button><br />
         <Button variant="contained" color="primary" onClick = {() => history.push("/home")}>Continue</Button>
       </form>
     </section>
