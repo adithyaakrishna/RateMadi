@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <img className="Zuink-Logo" src={require('./assets/img/Name-L.png')} alt="Zuink-Text-Logo" />
       <ScrollLock>
       <header className="App-header">
       <Switch>

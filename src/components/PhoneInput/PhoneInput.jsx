@@ -40,8 +40,10 @@ function Phinput(props) {
   };
 
   return (
+    
+    
     <section>
-      <img src={require('../../assets/img/Name-L.png')} alt="Zuink-Text-Logo" style={{marginBottom:"20px"}} />
+      
       {/* <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom style={{ marginTop: "0px", fontStyle:"Roboto" }}>
         Zuink
       </Typography> */}
@@ -73,6 +75,7 @@ function Phinput(props) {
         </Button>
       </form>
     </section>
+
   );
 }
 
