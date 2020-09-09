@@ -4,8 +4,11 @@ import TextField from "@material-ui/core/TextField";
 import Axios from "axios";
 // import { makeStyles } from "@material-ui/core/styles";
 // import CustomizedRatings from "../Rating/Rating";
+//import ThankYou from "../../pages/ThankYou/ThankYou";
+import { useHistory } from "react-router-dom";
 
 const FormField = (props) => {
+  const history = useHistory()
   const handleSubmit = async(event) => {
     event.preventDefault();
     await Axios.post("13.232.41.160:3050/delivery_gods/add_feedback", JSON.stringify({ "phone_number": props.currentPhone, "feedback_text": props.message, "rating": props.rating }))
@@ -30,9 +33,9 @@ const FormField = (props) => {
         </div>
         <TextField error id="standard-error" label="Enter a Tip Amount" defaultValue="Rs. 10" style={{ marginBottom: "20px", marginTop:"10px" }} />
         <br />
-        <Button type="submit" variant="contained" color="primary" style={{ marginBottom: "10px" }}>Tip</Button>
+        <Button variant="contained" color="primary" style={{ marginBottom: "10px" }}>Tip</Button>
         <br />
-        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"10px"}}>
+        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"10px"}} onClick = {() => history.push("/thankyou")}>
           Submit
         </Button>
       </form>

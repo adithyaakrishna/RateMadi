@@ -7,6 +7,7 @@ import FormPage from './pages/FormPage/FormPage';
 import HomePage from './pages/HomePage/HomePage';
 import Otpinput from './components/OtpValidate/OtpValidate';
 import { Switch, Route, Redirect } from "react-router-dom";
+import ThankYou from "./pages/ThankYou/ThankYou";
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/validate' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<Otpinput currentPhone={currentPhone}></Otpinput>}></Route>
           <Route path='/home' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<HomePage></HomePage>}></Route>
           <Route path='/rating' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<FormPage setCurrentPhone = {setCurrentPhone} currentPhone = {currentPhone}></FormPage>}></Route>
+          <Route path='/thankyou' render={() => currentPhone === null ? <Redirect to='/'></Redirect> : <ThankYou setCurrentPhone={setCurrentPhone} currentPhone={currentPhone}></ThankYou>}></Route>
       </Switch>   
       </header>
       </ScrollLock>
