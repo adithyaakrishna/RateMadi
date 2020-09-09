@@ -5,6 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
 //import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +41,10 @@ function Phinput(props) {
 
   return (
     <section>
+      <img src={require('../../assets/img/Name-L.png')} alt="Zuink-Text-Logo" style={{marginBottom:"20px"}} />
+      {/* <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom style={{ marginTop: "0px", fontStyle:"Roboto" }}>
+        Zuink
+      </Typography> */}
       <form
         className={classes.root}
         noValidate={true}
