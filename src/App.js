@@ -14,6 +14,8 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 function App() {
 
   const [currentPhone, setCurrentPhone] = useState(null);
+  var user_id = localStorage.getItem("user_id");
+  console.log("logged in",  localStorage.getItem("user_id"));
   //state = { lockScroll: false }
 
   return (
@@ -22,12 +24,12 @@ function App() {
       <ScrollLock>
       <header className="App-header">
       <Switch>
-          <Route exact path='/' render={() => <Phinput setCurrentPhone={setCurrentPhone}></Phinput>}></Route>
-          <Route path='/validate' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<Otpinput currentPhone={currentPhone}></Otpinput>}></Route>
-          <Route path='/home' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<HomePage></HomePage>}></Route>
-          <Route path='/rating' render={() => currentPhone === null ? <Redirect to='/'></Redirect> :<FormPage setCurrentPhone = {setCurrentPhone} currentPhone = {currentPhone}></FormPage>}></Route>
-          <Route path='/thankyou' render={() => currentPhone === null ? <Redirect to='/'></Redirect> : <ThankYou setCurrentPhone={setCurrentPhone} currentPhone={currentPhone}></ThankYou>}></Route>
-      </Switch>   
+          <Route exact path='/' render={() => user_id != null ? <Redirect to='/home'></Redirect> :<Phinput setCurrentPhone={setCurrentPhone}></Phinput>}></Route>
+          <Route path='/validate' render={() => <Otpinput currentPhone={currentPhone}></Otpinput>}></Route>
+          <Route path='/home' render={() => user_id === null ? <Redirect to='/'></Redirect> :<HomePage></HomePage>}></Route>
+          <Route path='/rating' render={() => <FormPage setCurrentPhone = {setCurrentPhone} currentPhone = {currentPhone}></FormPage>}></Route>
+          <Route path='/thankyou' render={() =>  <ThankYou setCurrentPhone={setCurrentPhone} currentPhone={currentPhone}></ThankYou>}></Route>
+      </Switch>
       </header>
       </ScrollLock>
     </div>

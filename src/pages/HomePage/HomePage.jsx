@@ -11,9 +11,11 @@ var QRCode = require("qrcode.react");
 
 const HomePage = () => {
   const history = useHistory();
+  var url =
+    "http://deliverygods.reapit.in/rating?id=" + localStorage.getItem("user_id");
   return (
     <section>
-      <QRCode value="http://facebook.github.io/react/" />
+      <QRCode value={url} />
       <br />
       {/* <AmountSlider></AmountSlider> */}
       <Phinput></Phinput>

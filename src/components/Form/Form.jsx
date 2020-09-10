@@ -9,11 +9,25 @@ import { useHistory } from "react-router-dom";
 
 const FormField = (props) => {
   const history = useHistory()
+  var x = new URLSearchParams(window.location.search).get('id');
+console.log(x)
   const handleSubmit = async(event) => {
     event.preventDefault();
-    await Axios.post("13.232.41.160:3050/delivery_gods/add_feedback", JSON.stringify({ "phone_number": props.currentPhone, "feedback_text": props.message, "rating": props.rating }))
-    .finally(() => props.setCurrentPhone(null))
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+    await Axios.post("http://13.232.41.160:3050/delivery_gods/add_feedback", JSON.stringify({ "phone_number": x, "feedback_text": props.message, "rating": props.rating }),{
+  headers: {
+    // Overwrite Axios's automatically set Content-Type
+    'Content-Type': 'application/json'
   }
+})
+    .then((res) => {
+      console.log(res);
+      history.push("/thankyou")
+    });
+
+  }
+
   return (
     <section>
       <form noValidate autoComplete="on" onSubmit = {handleSubmit}>
@@ -28,6 +42,7 @@ const FormField = (props) => {
             variant="outlined"
             value = {props.message}
             onChange = {(e) => {props.setMessage(e.target.value)}}
+            onSubmit={handleSubmit}
           />
           <br />
         </div>
@@ -35,7 +50,7 @@ const FormField = (props) => {
         <br />
         <Button variant="contained" color="primary" style={{ marginBottom: "10px" }}>Tip</Button>
         <br />
-        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"10px"}} onClick = {() => history.push("/thankyou")}>
+        <Button type="submit" variant="contained" color="secondary" style={{marginTop:"10px"}}>
           Submit
         </Button>
       </form>

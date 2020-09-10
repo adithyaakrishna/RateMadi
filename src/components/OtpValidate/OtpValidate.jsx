@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import { render } from "@testing-library/react";
 //import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,8 +41,9 @@ export default function Otpinput(props) {
         Axios.post("http://13.232.41.160:3050/delivery_gods/add_user", {
           phone_number: props.currentPhone,
         }).then((res) => {
-          window.user_id = res.data.id;
-          console.log(res);
+          localStorage.setItem("user_id", res.data.data.id);
+          localStorage.setItem("phone_number", props.currentPhone);
+          console.log(res, localStorage.getItem("user_id"));
           history.push("/home");
         });
       } else alert(res.data.message);
