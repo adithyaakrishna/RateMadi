@@ -25,7 +25,7 @@ function App() {
       <ScrollLock>
       <header className="App-header">
       <Switch>
-          <Route path='/login' render={() => <Login currentPhone={currentPhone}></Login>}></Route>
+          <Route path='/login' render={() => <Login currentPhone={currentPhone} setCurrentPhone = {setCurrentPhone}></Login>}></Route>
           <Route exact path='/' render={() => user_id != null ? <Redirect to='/home'></Redirect> :<Login setCurrentPhone = {setCurrentPhone} ></Login>}></Route>
           <Route path='/validate' render={() => <Otpinput currentPhone={currentPhone}></Otpinput>}></Route>
           <Route path='/home' render={() => user_id === null ? <Redirect to='/login'></Redirect> :<HomePage></HomePage>}></Route>

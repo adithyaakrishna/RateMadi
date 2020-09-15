@@ -9,12 +9,13 @@ import { useHistory } from "react-router-dom";
 //import AmountSlider from "../../components/AmountSlider/AmountSlider";
 var QRCode = require("qrcode.react");
 
-const HomePage = () => {
+const HomePage = (props) => {
   const history = useHistory();
+
   return (
     <section>
 
-      <PhinputLogin></PhinputLogin>
+      <PhinputLogin setCurrentPhone = {props.setCurrentPhone}></PhinputLogin>
     </section>
   );
 };

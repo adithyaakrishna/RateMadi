@@ -7,7 +7,7 @@ import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 //import "../HomePage/homepage.min.scss";
 //import AmountSlider from "../../components/AmountSlider/AmountSlider";
-var QRCode = require("qrcode.react");
+import QRCode from 'qrcode.react'
 
 const HomePage = () => {
   const history = useHistory();
