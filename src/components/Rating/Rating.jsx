@@ -61,7 +61,7 @@ export default function CustomizedRatings(props) {
           name="customized-color"
           defaultValue={props.rating}
           getLabelText={(value) => `${value} Heart${value !== 1 ? "s" : ""}`}
-          precision={0.5}
+          precision={1}
           icon={<FavoriteIcon fontSize="inherit" />}
           value = {props.rating}
           onChange = {(e, value) => {props.setRating(value)}}

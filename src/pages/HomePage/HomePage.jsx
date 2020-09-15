@@ -11,25 +11,14 @@ var QRCode = require("qrcode.react");
 
 const HomePage = () => {
   const history = useHistory();
-  var url =
-    "http://deliverygods.reapit.in/rating?id=" + localStorage.getItem("user_id");
+  var url ="http://deliverygods.reapit.in/rating?id=" + localStorage.getItem("user_id");
   return (
     <section>
+
       <QRCode value={url} />
       <br />
-      {/* <AmountSlider></AmountSlider> */}
+      <br />
       <Phinput></Phinput>
-      <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        onClick={() => history.push("/rating")}
-        style={{ marginTop: "10px" }}
-      >
-        Give Rating
-      </Button>
-      {/* <Paper elevation={3}> </Paper> */}
-      {/* <BottomNavBar></BottomNavBar> */}
     </section>
   );
 };

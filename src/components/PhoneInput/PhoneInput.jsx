@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -25,25 +24,22 @@ function Phinput(props) {
   // }))
   const [phone, setPhone] = useState("");
   var history = useHistory();
+  var url ="http://deliverygods.reapit.in/rating?id=" + localStorage.getItem("user_id");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    await Axios.get(
-      `${proxyurl}` +
-        "https://api.msg91.com/api/v5/otp?authkey=130764Adagc1lyUY5f54c6bbP1&template_id=5e713062d6fc052d9b0abeb4&mobile=" +
-        `${phone}` +
-        "&invisible=1"
-    )
-      .then((res) => props.setCurrentPhone(phone))
-      .then(() => history.push("/validate"));
-  };
-
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+setPhone('');
+  await Axios.get(
+    `${proxyurl}` +
+      "https://api.msg91.com/api/sendhttp.php?authkey=130764Adagc1lyUY5f54c6bbP1&mobiles="+phone+"&country=91&message=Visit this link to rate the executive: "+url+"&sender=SMSIND&route=4"
+  ).then((res) => {
+    console.log(res);
+  });
+      };
   return (
-    
-    
     <section>
-      
+
       {/* <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom style={{ marginTop: "0px", fontStyle:"Roboto" }}>
         Zuink
       </Typography> */}
@@ -71,7 +67,7 @@ function Phinput(props) {
         </div>
 
         <Button type="submit" variant="contained" color="secondary">
-          Submit
+          Send feedback link
         </Button>
       </form>
     </section>
