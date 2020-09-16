@@ -24,7 +24,7 @@ function Phinput(props) {
   // }))
   const [phone, setPhone] = useState("");
   var history = useHistory();
-  var url ="http://deliverygods.reapit.in/rating?id=" + localStorage.getItem("user_id");
+  var url ="http://rating.reapit.in?id=" + localStorage.getItem("user_id");
 
       const handleSubmit = async (event) => {
         event.preventDefault();
