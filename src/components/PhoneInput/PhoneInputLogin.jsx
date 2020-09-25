@@ -6,7 +6,6 @@ import Axios from "axios";
 //import Axios from "axios";
 import { useHistory } from "react-router-dom";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -36,6 +35,10 @@ function PhinputLogin(props) {
 
   return (
     <section>
+      <h5>
+        Join the #1 Rating app! Enter your phone number to earn tips, get
+        customer feedback and better jobs!
+      </h5>
       <form
         className={classes.root}
         noValidate={true}

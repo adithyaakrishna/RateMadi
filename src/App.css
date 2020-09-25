@@ -6,7 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-.Zuink-Logo{
+.Zuink-Logo {
   margin-top: 50px;
 }
 
@@ -18,7 +18,7 @@
 
 .App-header {
   background-color: #ffffff;
-  min-height: 80vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
