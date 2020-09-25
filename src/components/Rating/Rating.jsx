@@ -56,15 +56,17 @@ export default function CustomizedRatings(props) {
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend">Delivery Rating</Typography>
+        <Typography component="legend">Rate Executive</Typography>
         <StyledRating
           name="customized-color"
           defaultValue={props.rating}
           getLabelText={(value) => `${value} Heart${value !== 1 ? "s" : ""}`}
           precision={1}
           icon={<FavoriteIcon fontSize="inherit" />}
-          value = {props.rating}
-          onChange = {(e, value) => {props.setRating(value)}}
+          value={props.rating}
+          onChange={(e, value) => {
+            props.setRating(value);
+          }}
         />
       </Box>
     </div>

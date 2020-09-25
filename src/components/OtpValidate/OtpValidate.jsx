@@ -52,6 +52,7 @@ export default function Otpinput(props) {
 
   return (
     <section>
+      <h5>We've sent you a one-time login. Enter your OTP number here.</h5>
       <form
         className={classes.root}
         noValidate={true}
