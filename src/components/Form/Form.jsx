@@ -13,7 +13,7 @@ const FormField = (props) => {
     event.preventDefault();
     console.log(tip);
     var options = {
-      key: "rzp_test_Yojq3daI9BFR0J", // Enter the Key ID generated from the Dashboard
+      key: "rzp_live_mZtl3uT2oc7RJv", // Enter the Key ID generated from the Dashboard
       amount: parseInt(tip) * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Zuink",
