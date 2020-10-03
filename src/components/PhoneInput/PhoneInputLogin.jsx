@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@material-ui/core";
+import { Button, CircularProgress } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
@@ -18,19 +18,28 @@ const useStyles = makeStyles((theme) => ({
 function PhinputLogin(props) {
   const classes = useStyles();
   const [phone, setPhone] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
   var history = useHistory();
 
   const handleSubmit = async (event) => {
+    setIsSubmitted(true);
     event.preventDefault();
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    await Axios.get(
-      `${proxyurl}` +
+    if (phone.length > 0 && (phone.length === 10 || phone.length === 11)) {
+
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      await Axios.get(
+        `${proxyurl}` +
         "https://api.msg91.com/api/v5/otp?authkey=130764Adagc1lyUY5f54c6bbP1&template_id=5e713062d6fc052d9b0abeb4&mobile=" +
         `${phone}` +
         "&invisible=1"
-    )
-      .then((res) => props.setCurrentPhone(phone))
-      .then(() => history.push("/validate"));
+      )
+        .then((res) => props.setCurrentPhone(phone))
+        .then(() => { setIsSubmitted(false) })
+        .then(() => history.push("/validate"));
+    } else {
+      alert("Invalid Phone Number")
+      setIsSubmitted(false)
+    }
   };
 
   return (
@@ -63,7 +72,7 @@ function PhinputLogin(props) {
         </div>
 
         <Button type="submit" variant="contained" color="secondary">
-          Submit
+          {isSubmitted ? <CircularProgress color='inherit' size={20}></CircularProgress> : "Submit"}
         </Button>
       </form>
     </section>
