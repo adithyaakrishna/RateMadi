@@ -4,6 +4,7 @@ import Axios from "axios";
 // import Razorpay from "razorpay";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { browserHistory } from "react-router";
 
 const FormField = (props) => {
   const history = useHistory();
@@ -24,7 +25,7 @@ const FormField = (props) => {
         alert(
           "Payment successful, payment id: " + response.razorpay_payment_id
         );
-        history.push("/thankyou");
+        browserHistory.push("/thankyou");
       },
       prefill: {
         name: "Gaurav Kumar",
