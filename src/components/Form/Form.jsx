@@ -43,7 +43,7 @@ const FormField = (props) => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
     await Axios.post(
-      "http://13.232.41.160:3050/delivery_gods/add_feedback",
+      "http://https://ratingbackend.reapit.in/delivery_gods/add_feedback",
       JSON.stringify({
         phone_number: x,
         feedback_text: props.message,

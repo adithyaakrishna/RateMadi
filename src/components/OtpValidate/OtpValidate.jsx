@@ -38,9 +38,12 @@ export default function Otpinput(props) {
     ).then((res) => {
       console.log(res);
       if (res.data.type == "success") {
-        Axios.post("http://13.232.41.160:3050/delivery_gods/add_user", {
-          phone_number: props.currentPhone,
-        }).then((res) => {
+        Axios.post(
+          "http://https://ratingbackend.reapit.in/delivery_gods/add_user",
+          {
+            phone_number: props.currentPhone,
+          }
+        ).then((res) => {
           localStorage.setItem("user_id", res.data.data.id);
           localStorage.setItem("phone_number", props.currentPhone);
           console.log(res, localStorage.getItem("user_id"));
