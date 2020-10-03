@@ -1,7 +1,7 @@
 // add user api
 
 var settings = {
-  url: "https://ratingbackend.reapit.in/delivery_gods/add_user",
+  url: "ratingbackend.reapit.in/delivery_gods/add_user",
   method: "POST",
   timeout: 0,
   headers: {
@@ -16,7 +16,7 @@ $.ajax(settings).done(function (response) {
 
 // add fedback
 var settings = {
-  url: "https://ratingbackend.reapit.in/delivery_gods/add_feedback",
+  url: "ratingbackend.reapit.in/delivery_gods/add_feedback",
   method: "POST",
   timeout: 0,
   headers: {
