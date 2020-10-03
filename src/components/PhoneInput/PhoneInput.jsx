@@ -3,11 +3,6 @@ import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
-//import Axios from "axios";
-import { useHistory } from "react-router-dom";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -19,11 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Phinput(props) {
   const classes = useStyles();
-  // useEffect (({
-  //   Axios.get()
-  // }))
   const [phone, setPhone] = useState("");
-  var history = useHistory();
   var url = "http://rating.reapit.in?id=" + localStorage.getItem("user_id");
 
   const handleSubmit = async (event) => {

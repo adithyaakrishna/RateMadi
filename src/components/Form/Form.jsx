@@ -1,12 +1,9 @@
 import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Axios from "axios";
-// import Razorpay from "razorpay";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 const FormField = (props) => {
-  const history = useHistory();
   var [tip, setTip] = useState("");
   var x = new URLSearchParams(window.location.search).get("id");
   const handleSubmit = async (event) => {
@@ -40,7 +37,7 @@ const FormField = (props) => {
     };
     const rzp1 = new window.Razorpay(options);
 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
     await Axios.post(
       "https://ratingbackend.reapit.in/delivery_gods/add_feedback",

@@ -4,8 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
-import { render } from "@testing-library/react";
-//import Axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Otpinput(props) {
   const classes = useStyles();
-  // useEffect (({
-  //   Axios.get()
-  // }))
   const [otp, setOtp] = useState("");
   const history = useHistory();
 
@@ -37,7 +32,7 @@ export default function Otpinput(props) {
         "130764Adagc1lyUY5f54c6bbP1"
     ).then((res) => {
       console.log(res);
-      if (res.data.type == "success") {
+      if (res.data.type === "success") {
         Axios.post("https://ratingbackend.reapit.in/delivery_gods/add_user/", {
           phone_number: props.currentPhone,
         }).then((res) => {

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import Phinput from './components/PhoneInput/PhoneInput';
-//import ScrollLock from 'react-scrolllock';
-//import { TouchScrollable } from 'react-scrolllock';
 import FormPage from './pages/FormPage/FormPage';
 import HomePage from './pages/HomePage/HomePage';
 import Login from './pages/Login/Login';
@@ -16,9 +13,6 @@ function App() {
 
   const [currentPhone, setCurrentPhone] = useState(null);
   var user_id = localStorage.getItem("user_id");
-  console.log("logged in",  localStorage.getItem("user_id"));
-  //state = { lockScroll: false }
-
   return (
     <div className="App">
       <img className="Zuink-Logo" src={require('./assets/img/Name-L.png')} alt="Zuink-Text-Logo" />
