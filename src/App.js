@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Phinput from './components/PhoneInput/PhoneInput';
-import ScrollLock from 'react-scrolllock';
+//import ScrollLock from 'react-scrolllock';
 //import { TouchScrollable } from 'react-scrolllock';
 import FormPage from './pages/FormPage/FormPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <img className="Zuink-Logo" src={require('./assets/img/Name-L.png')} alt="Zuink-Text-Logo" />
-      <ScrollLock>
+      {/* <ScrollLock> */}
       <header className="App-header">
       <Switch>
           <Route path='/login' render={() => user_id != null ? <Redirect to='/home'></Redirect> : <Login currentPhone={currentPhone} setCurrentPhone = {setCurrentPhone}></Login>}></Route>
@@ -33,7 +33,7 @@ function App() {
           <Route path='/thankyou' render={() =>  <ThankYou setCurrentPhone={setCurrentPhone} currentPhone={currentPhone}></ThankYou>}></Route>
       </Switch>
       </header>
-      </ScrollLock>
+      {/* </ScrollLock> */}
     </div>
   );
 }
