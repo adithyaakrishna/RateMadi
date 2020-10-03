@@ -4,7 +4,6 @@ import Axios from "axios";
 // import Razorpay from "razorpay";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { browserHistory } from "react-router";
 
 const FormField = (props) => {
   const history = useHistory();
@@ -25,7 +24,7 @@ const FormField = (props) => {
         alert(
           "Payment successful, payment id: " + response.razorpay_payment_id
         );
-        browserHistory.push("/thankyou");
+        window.location.href = "http://thankyou.ratemadi.com/";
       },
       prefill: {
         name: "Gaurav Kumar",
@@ -60,7 +59,7 @@ const FormField = (props) => {
       console.log(res);
       if (tip > 0) {
         rzp1.open();
-      } else history.push("/thankyou");
+      } else window.location.href = "http://thankyou.ratemadi.com/";
     });
   };
 
