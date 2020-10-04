@@ -12,11 +12,3 @@ In the project directory:
 
 - To test the app,<br>
  `yarn test`
-
-### App Screenshots:
-
-![Phone Input Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S1.PNG)
-
-![OTP Input Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S2.PNG)
-
-![Rating Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S3.PNG)
