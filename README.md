@@ -15,8 +15,8 @@ In the project directory:
 
 ### App Screenshots:
 
-![Phone Input Screen](assets/S1.png)
+![Phone Input Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S1.PNG)
 
-![OTP Input Screen](assets/S2.png)
+![OTP Input Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S2.PNG)
 
-![Rating Screen](assets/S3.png)
+![Rating Screen](https://raw.githubusercontent.com/adithyaakrishna/RateMadi/master/assets/S3.PNG)
