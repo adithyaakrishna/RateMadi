@@ -15,8 +15,8 @@ In the project directory:
 
 ### App Screenshots:
 
-![Phone Input Screen](./assets/S1.png)
+![Phone Input Screen](/assets/S1.png)
 
-![OTP Input Screen](./assets/S2.png)
+![OTP Input Screen](/assets/S2.png)
 
-![Rating Screen](./assets/S3.png)
+![Rating Screen](/assets/S3.png)
