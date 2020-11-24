@@ -20,7 +20,7 @@
     "react-dom": "^16.13.1",
     "react-native-razorpay": "^2.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^4.0.1",
     "react-scrolllock": "^5.0.1"
   },
   "scripts": {
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }
